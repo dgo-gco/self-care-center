@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-  
+    <div class="container">
+      <h1 class="title">✨ Self care Center ✨</h1>
+
+      <div class="user-selection">
+        <h2 class="title">What type of message?</h2>
+        <div class="user-input">
+          <div class="inputs">
+            <!-- they need to have same name so we can use them together (as part of the same selection) -->
+            <label for="affirmation"><input type="radio" id="affirma-inp" name="phrases" value="affirmations">Affirmation</label>
+            <label for="mantra"><input type="radio" id="mantra-inp" name="phrases" value="mantras">Mantra</label>
+          </div>
+          <div class="buttons">
+            <button class="msg-btn">Receive message</button>
+            <button class="effacer-btn">Effacer message</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="message">
+        <img src="assets/meditate.svg" alt="" class="meditation">
+        <!-- <p id="output"></p> -->
+      </div>
+    </div>
+
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
