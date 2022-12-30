@@ -40,6 +40,9 @@ body {
 }
 
 .user-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     text-align: center;
 }
 
@@ -70,7 +73,8 @@ body {
     cursor: pointer;
 }
 
-.buttons > button:hover {
+/* enabled adds hover only when button is enabled */
+.buttons > button:hover:enabled {
     background-color: white;
     color: #134d71;
     border: 1.5px solid #134d71;
@@ -84,8 +88,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .meditation {
     height: 50%;
+}
+
+
+@media screen and (max-width: 756px) {
+
+    .user-input {
+        width: 90vw;
+    }
+
+    .message {
+        width: 90vw;
+    }
 }

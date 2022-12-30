@@ -60,7 +60,6 @@ btn.addEventListener('click', function(){
      } else if (checkIfChecked() === 'mantras'){
               message.innerHTML = `
               <p id="phrase-active">${mantras[getMant()]}</p>`;
-              console.log(message.innerHTML)
               effacerBtn.style.opacity = '1'
               effacerBtn.disabled = false; 
      } 
