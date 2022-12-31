@@ -24,15 +24,33 @@
           <div class="buttons">
             <button class="msg-btn">Receive message</button>
             <button class="effacer-btn">Effacer message</button>
+            <button class="your-phrase-btn">Add your phrase</button>
           </div>
         </div>
       </div>
 
       <div class="message">
         <img src="assets/meditate.svg" alt="" class="meditation">
-        <!-- <p id="output"></p> -->
       </div>
     </div>
+
+
+      <div id="lightbox">
+        <div class="displ-cont">
+          <div class="close">
+            <p>&times;</p>
+          </div>
+          <div class="lightbox-container">
+            <div class="inputs confirmation" id="inputs-confir">
+              <label for="affirmation"><input type="radio" id="affirma-add" name="phrases-conf" value="affirmations-conf">Affirmation</label>
+              <label for="mantra"><input type="radio" id="mantra-add" name="phrases-conf" value="mantras-conf">Mantra</label>
+            </div>
+            <input type="text" name="add-phrase" id="text-add" placeholder="Add your phrase">
+            <button class="add-phrase-confirmation">Add phrase</button>
+          </div>
+        </div>
+      </div>
+
 
     <script type="text/javascript" src="main.js"></script>
   </body>

@@ -84,3 +84,76 @@ inputs.addEventListener('click', (e) => {
         btn.style.opacity = '1'
     }
 })
+
+
+const addPhrase = document.querySelector('.your-phrase-btn');
+const lightbox = document.querySelector('#lightbox');
+const inputText = document.querySelector('#text-add');
+const addPhraseConfirm = document.querySelector('.add-phrase-confirmation');
+const closeBtn = document.querySelector('.close');
+const addPhraseContainer = document.querySelector('.lightbox-container');
+
+let inputsConfirmation = document.querySelector('#inputs-confir');
+let affirmaConfirm = document.querySelector('#affirma-add');
+let mantraConfirm = document.querySelector('#affirma-add');
+
+
+let radioBtnsConf = document.querySelectorAll("input[name='phrases-conf']");
+
+
+addPhrase.addEventListener('click', function(){
+    lightbox.style.display = 'block';
+})
+
+closeBtn.addEventListener('click', function(){
+     lightbox.style.display = 'none';
+})
+
+
+function checkIfCheckedConfirmation(){
+    for (let i = 0; i < radioBtnsConf.length; i++){
+        let chaqueRadioConf = radioBtnsConf[i];
+        if (chaqueRadioConf.checked){
+            return chaqueRadioConf.value;
+        } 
+    }
+} //This function checks what radios is checked and then I use it below to decide what kind of message they're submitting
+
+inputsConfirmation.addEventListener('click', (e) => {
+    let inputValueRadio = e.target.value;
+    if (inputValueRadio){
+        addPhraseConfirm.innerHTML = `<p>Add phrase</p>`;
+        addPhraseConfirm.style.backgroundColor = '#134d71'   
+    } 
+    // This if will check if i've already selected a type of message so the user will be able to submit it
+})
+
+addPhraseConfirm.addEventListener('click', function(){
+        if (checkIfCheckedConfirmation() === 'affirmations-conf') {
+            let getTextFromUser = inputText.value;
+            affirmations.push(getTextFromUser);
+            message.innerHTML = `
+                      <p id="phrase-active">${getTextFromUser}</p>`;
+            lightbox.style.display = 'none';
+            effacerBtn.style.opacity = '1'
+            effacerBtn.disabled = false; 
+            addPhraseConfirm.innerHTML = `<p>Add phrase</p>`;
+            addPhraseConfirm.style.backgroundColor = '#134d71'
+            inputText.value = ''; 
+        } else if (checkIfCheckedConfirmation() === 'mantras-conf') {
+            let getTextFromUser = inputText.value;
+            mantras.push(getTextFromUser);
+            message.innerHTML = `
+                    <p id="phrase-active">${getTextFromUser}</p>`;
+            lightbox.style.display = 'none';
+            effacerBtn.style.opacity = '1'
+            effacerBtn.disabled = false; 
+            inputText.value = ''; 
+        } else {
+            console.log("Specifiez un type de message s'il vous plait")
+            addPhraseConfirm.innerHTML = `<p>Specify the type of message</p>`;
+            addPhraseConfirm.style.backgroundColor = 'red'
+            //This will block the button because the user needs to specify a type of message
+        }
+}) 
+
