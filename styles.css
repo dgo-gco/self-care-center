@@ -19,12 +19,13 @@ img {
 }
 
 body {
-    background: rgb(247,228,191);
-    background: linear-gradient(0deg, rgba(247,228,191,1) 0%, rgba(120,167,198,1) 62%, rgba(19,77,113,1) 100%) no-repeat;
     height: 100vh;
     font-family: 'Quicksand', sans-serif;
     display: flex;
     justify-content: center;
+    background-image: url(/assets/daniel-angele-Joo3UBw789Q-unsplash.jpeg);
+    background-size: cover;
+    background-position: top;
 }
 
 .container {
@@ -36,7 +37,7 @@ body {
 }
 
 .title {
-    color: #FFFFFF;
+    color: #134d71;
 }
 
 .user-selection {
